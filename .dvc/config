@@ -1,4 +1,6 @@
 [core]
-    remote = myremote
+    remote = model-storage
 ['remote "myremote"']
     url = s3://udacityproject3census/censusData/
+['remote "model-storage"']
+    url = s3://udacityproject3census/model/
