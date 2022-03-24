@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 
 new_user_credentials.csv
+/model
