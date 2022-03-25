@@ -15,7 +15,7 @@ from shutil import ExecError
 import starter.train_model
 
 def test_clean_data():
-    assert os.path.isfile('/root/Deploy-Ml-Model-Heroku-FastAPI/data/census.csv.dvc')
+    assert os.path.isfile('/Deploy-Ml-Model-Heroku-FastAPI/data/census.csv.dvc')
 
 def test_read_return_train_test_data():
     train, test = starter.train_model.read_return_train_test_data(f"/root/Deploy-Ml-Model-Heroku-FastAPI/data/clean_data.csv")
