@@ -45,7 +45,7 @@ def evaluate_model(cat_features, test):
     prediction = lb.inverse_transform(preds)
 
     # Compute score per slice
-    ml.model.compute_score_per_slice(model, test, encoder, lb, cat_features)
+    starter.ml.model.compute_score_per_slice(model, test, encoder, lb, cat_features)
 
     return metrics, prediction
 
