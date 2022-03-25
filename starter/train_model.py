@@ -26,9 +26,9 @@ def train_model(cat_features, train):
     # Train and save a model.
     trained_model = starter.ml.model.train_model(X_train, y_train)
     # save model
-    joblib.dump(trained_model, f"/root/Deploy-Ml-Model-Heroku-FastAPI/model/model.joblib")
-    joblib.dump(encoder, f"/root/Deploy-Ml-Model-Heroku-FastAPI/model/encoder.joblib")
-    joblib.dump(lb, f"/root/Deploy-Ml-Model-Heroku-FastAPI/model/lb.joblib")
+    joblib.dump(trained_model, f"./model/model.joblib")
+    joblib.dump(encoder, f"./model/encoder.joblib")
+    joblib.dump(lb, f"./model/lb.joblib")
 
 
 def evaluate_model(cat_features, test):
