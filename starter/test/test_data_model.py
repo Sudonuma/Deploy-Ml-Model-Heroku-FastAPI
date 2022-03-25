@@ -15,10 +15,10 @@ from shutil import ExecError
 import starter.train_model
 
 def test_clean_data():
-    assert os.path.isfile('./data/census.csv.dvc')
+    assert os.path.isfile('./data/census.csv')
 
 def test_read_return_train_test_data():
-    train, test = starter.train_model.read_return_train_test_data(f"/root/Deploy-Ml-Model-Heroku-FastAPI/data/clean_data.csv")
+    train, test = starter.train_model.read_return_train_test_data(f"./data/clean_data.csv")
     assert train.shape[0] > 0
     assert test.shape[0] > 0
 
@@ -37,9 +37,9 @@ def test_train_model():
     ]
     train, _ = test_read_return_train_test_data()
     starter.train_model.train_model(cat_features, train)
-    assert os.path.isfile("/root/Deploy-Ml-Model-Heroku-FastAPI/model/model.joblib")
-    assert os.path.isfile("/root/Deploy-Ml-Model-Heroku-FastAPI/model/encoder.joblib")
-    assert os.path.isfile("/root/Deploy-Ml-Model-Heroku-FastAPI/model/lb.joblib")
+    assert os.path.isfile("./model/model.joblib")
+    assert os.path.isfile("./model/encoder.joblib")
+    assert os.path.isfile("./model/lb.joblib")
 
 # def test_score_per_slice():
     # pass
