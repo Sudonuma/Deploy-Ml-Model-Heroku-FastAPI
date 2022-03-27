@@ -3,10 +3,10 @@ import joblib
 import pandas as pd
 from sklearn.model_selection import train_test_split
 import numpy as np
+print('scope',__name__)
 
-from starter.ml.data import process_data
-import starter.ml.model
-
+from ml.data import process_data
+from ml.model import train_model as tm, inference, compute_model_metrics, compute_score_per_slice
 # Add code to load in the data.
 def read_return_train_test_data(path):
 
@@ -24,7 +24,7 @@ def train_model(cat_features, train):
     # Proces the test data with the process_data function.
 
     # Train and save a model.
-    trained_model = starter.ml.model.train_model(X_train, y_train)
+    trained_model = tm(X_train, y_train)
     # save model
     joblib.dump(trained_model, f"./model/model.joblib")
     joblib.dump(encoder, f"./model/encoder.joblib")
@@ -40,12 +40,12 @@ def evaluate_model(cat_features, test):
     X_test, y_test, encoder, lb= process_data(
     test, categorical_features=cat_features, label='salary', encoder=encoder, lb=lb, training=False
 )
-    preds = starter.ml.model.inference(model, X_test)
-    metrics = starter.ml.model.compute_model_metrics(y_test, preds)
+    preds = inference(model, X_test)
+    metrics = compute_model_metrics(y_test, preds)
     prediction = lb.inverse_transform(preds)
 
     # Compute score per slice
-    starter.ml.model.compute_score_per_slice(model, test, encoder, lb, cat_features)
+    compute_score_per_slice(model, test, encoder, lb, cat_features)
 
     return metrics, prediction
 
