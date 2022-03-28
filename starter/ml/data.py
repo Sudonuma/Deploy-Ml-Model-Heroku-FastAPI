@@ -51,7 +51,6 @@ def process_data(
     else:
         # X = X.drop(['salary'], axis=1)
         y = np.array([])
-        
     X_categorical = X[categorical_features].values
     X_continuous = X.drop(*[categorical_features], axis=1)
 

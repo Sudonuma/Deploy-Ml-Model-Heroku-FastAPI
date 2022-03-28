@@ -3,6 +3,7 @@ import joblib
 import pandas as pd
 from sklearn.model_selection import train_test_split
 import numpy as np
+
 print('scope',__name__)
 
 from ml.data import process_data
