@@ -131,4 +131,4 @@ dmypy.json
 new_user_credentials.csv
 /model
 
-/logs
+# /logs
