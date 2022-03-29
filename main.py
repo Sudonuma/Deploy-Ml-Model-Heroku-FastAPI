@@ -72,9 +72,9 @@ async def inference(input_data: CensusItem):
         "native-country",
     ]
 
-    model = joblib.load("/root/Deploy-Ml-Model-Heroku-FastAPI/model/model.joblib")
-    encoder = joblib.load("/root/Deploy-Ml-Model-Heroku-FastAPI/model/encoder.joblib")
-    lb = joblib.load("/root/Deploy-Ml-Model-Heroku-FastAPI/model/lb.joblib")
+    model = joblib.load("./model/model.joblib")
+    encoder = joblib.load("./model/encoder.joblib")
+    lb = joblib.load("./model/lb.joblib")
 
     X_test, _ , encoder, lb= process_data(
     pd.DataFrame(input_data.dict(by_alias=True), index=[0]), categorical_features=cat_features, label=None, encoder=encoder, lb=lb, training=False
