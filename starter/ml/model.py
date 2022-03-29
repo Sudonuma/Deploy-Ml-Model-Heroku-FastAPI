@@ -7,8 +7,8 @@ from .data import process_data
 import logging
 
 
-logging.basicConfig(filename='./logs/category_slice_scores.log', level=logging.INFO, format="%(asctime)-15s %(message)s")
-logger = logging.getLogger()
+# logging.basicConfig(filename='./logs/category_slice_scores.log', level=logging.INFO, format="%(asctime)-15s %(message)s")
+# logger = logging.getLogger()
 
 # Optional: implement hyperparameter tuning.
 def train_model(X_train, y_train):
@@ -101,5 +101,5 @@ def compute_score_per_slice(model, test, encoder,
             predictions = model.predict(x_test)
 
             precision, recall, fbeta = compute_model_metrics(y_test, predictions)
-            logger.info("category slice: %s : precision: %s, recall %s, fbeta: %s" %(key_category, precision, recall, fbeta))
+            # logger.info("category slice: %s : precision: %s, recall %s, fbeta: %s" %(key_category, precision, recall, fbeta))
             print("category slice: %s : precision: %s, recall %s, fbeta: %s" %(key_category, precision, recall, fbeta))
