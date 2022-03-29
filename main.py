@@ -54,7 +54,7 @@ class CensusItem(BaseModel):
 app = FastAPI()
 
 @app.get("/")
-async def say_hello(input_data: CensusItem):
+async def say_hello():
     return {"welcome message": "Greetings from here to there!"}
 
 # This allows sending of data (our TaggedItem) via POST to the API.
