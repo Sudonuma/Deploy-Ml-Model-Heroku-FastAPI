@@ -26,7 +26,7 @@ sys.path.append(os.path.dirname(SCRIPT_DIR))
 
 if "DYNO" in os.environ and os.path.isdir(".dvc"):
     os.system("dvc config core.no_scm true")
-    if os.system("dvc pull") != 0:
+    if os.system("dvc pull --force") != 0:
         exit("dvc pull failed")
     os.system("rm -r .dvc .apt/usr/lib/dvc")
 
