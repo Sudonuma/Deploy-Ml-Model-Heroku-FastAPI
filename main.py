@@ -6,6 +6,10 @@ import sys
 from fastapi import FastAPI
 # Import Union since our Item object will have tags that can be strings or a list.
 from typing import Union 
+import joblib
+import os
+import sys
+import pandas as pd
 
 # BaseModel from Pydantic is used to define data objects.
 from pydantic import BaseModel, Field
@@ -13,10 +17,6 @@ from pydantic import BaseModel, Field
 from starter.ml.data import process_data
 from starter.ml.model import train_model as tm, inference as infe
 
-import joblib
-import os
-import sys
-import pandas as pd
 
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -55,7 +55,7 @@ app = FastAPI()
 
 @app.get("/")
 async def say_hello(input_data: CensusItem):
-    return {"welcome message": "Hello World!"}
+    return {"welcome message": "Greetings from here to there!"}
 
 # This allows sending of data (our TaggedItem) via POST to the API.
 @app.post("/")
