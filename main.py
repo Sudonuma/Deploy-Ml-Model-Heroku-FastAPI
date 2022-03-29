@@ -11,12 +11,13 @@ from typing import Union
 from pydantic import BaseModel, Field
 
 from starter.ml.data import process_data
-from starter.ml.model import train_model as tm, inference as infe, compute_model_metrics, compute_score_per_slice
+from starter.ml.model import train_model as tm, inference as infe
 
 import joblib
 import os
 import sys
 import pandas as pd
+
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(SCRIPT_DIR))
