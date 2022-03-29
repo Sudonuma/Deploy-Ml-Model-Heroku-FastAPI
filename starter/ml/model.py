@@ -7,7 +7,7 @@ from .data import process_data
 import logging
 
 
-logging.basicConfig(filename='/root/Deploy-Ml-Model-Heroku-FastAPI/logs/category_slice_scores.log', level=logging.INFO, format="%(asctime)-15s %(message)s")
+logging.basicConfig(filename='./logs/category_slice_scores.log', level=logging.INFO, format="%(asctime)-15s %(message)s")
 logger = logging.getLogger()
 
 # Optional: implement hyperparameter tuning.
